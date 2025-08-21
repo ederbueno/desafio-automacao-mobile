@@ -1,14 +1,13 @@
 package tests;
 
-import io.appium.java_client.AppiumDriver;
+import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import utils.CSVUtils;
 
-public class LoginTest {
-    private AppiumDriver driver;
+public class LoginTest extends BaseTest {
 
     @DataProvider(name = "loginData")
     public Object[][] loginData() {

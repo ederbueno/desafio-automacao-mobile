@@ -18,6 +18,9 @@ public class LoginPage {
     @AndroidFindBy(id = "loginBtn")
     private WebElement  loginButton;
 
+    @AndroidFindBy(id = "goToRegisterBtn")
+    private WebElement goToRegisterButton;
+
     public LoginPage(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
@@ -28,4 +31,10 @@ public class LoginPage {
         passwordField.sendKeys(password);
         loginButton.click();
     }
+
+    public void irParaCadastro() {
+        goToRegisterButton.click();
+    }
+
+
 }
