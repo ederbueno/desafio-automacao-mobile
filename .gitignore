@@ -1,0 +1,28 @@
+# Diretórios e arquivos do Gradle
+.gradle/
+build/
+out/
+
+# Arquivos de log
+*.log
+
+# Configurações do sistema
+*.iml
+.idea/
+*.ipr
+*.iws
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+
+# Relatórios do Allure
+allure-results/
+allure-report/
+
+# Arquivos temporários
+*.tmp
+*.swp
+
+# Arquivos de testes gerados
+test-output/
