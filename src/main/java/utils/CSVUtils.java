@@ -4,7 +4,6 @@ import com.opencsv.CSVReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
-
 public class CSVUtils {
     public static Object[][] readCSV(String filePath) {
         List<Object[]> data = new ArrayList<>();
@@ -13,7 +12,7 @@ public class CSVUtils {
             boolean isHeader = true;
             while ((line = reader.readNext()) != null) {
                 if (isHeader) {
-                    isHeader = false; // pula o cabeçalho
+                    isHeader = false;
                     continue;
                 }
                 data.add(line);

@@ -1,3 +1,0 @@
-username,password,expectedMessage
-user1,pass1,Welcome
-user2,wrongpass,Invalid credentials

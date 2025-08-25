@@ -12,7 +12,7 @@ public class NavigationTest extends BaseTest {
     @Test
     public void testNavegacaoCadastro() {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.irParaCadastro();
+       // loginPage.irParaCadastro();
 
         CadastroPage cadastroPage = new CadastroPage(driver);
         assert cadastroPage.isCadastroDisplayed();

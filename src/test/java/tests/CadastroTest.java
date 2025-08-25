@@ -6,10 +6,11 @@ import pages.CadastroPage;
 import pages.HomePage;
 
 
-public class CadastroTest extends BaseTest {
+
+public class CadastroTest extends BaseTest  {
 
     @Test
-    public void testCadastroValido() {
+    public void deveValidarUsuarioCadastrado() {
         CadastroPage cadastroPage = new CadastroPage(driver);
         cadastroPage.cadastrar("João Silva", "joao@email.com");
 
@@ -18,7 +19,7 @@ public class CadastroTest extends BaseTest {
     }
 
     @Test
-    public void testCadastroInvalido() {
+    public void naoDeveValidarUsuarioCadastrado() {
         CadastroPage cadastroPage = new CadastroPage(driver);
         cadastroPage.cadastrar("", "email_invalido");
 

@@ -8,29 +8,33 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 public class CadastroPage {
     private AppiumDriver driver;
-    @AndroidFindBy(id = "name")
-    private WebElement nameField;
-    @AndroidFindBy(id = "email")
+
+    @AndroidFindBy(xpath="//*[@text='Login']")
+    private WebElement botaoLogin;
+    @AndroidFindBy(xpath = "//*[@content-desc='input-email']")
     private WebElement emailField;
-    @AndroidFindBy(id = "registerBtn")
-    private WebElement registerButton;
-    @AndroidFindBy(id = "cadastroTitle")
-    private WebElement cadastroTitle;
-    @AndroidFindBy(id = "mensagemErro")
-    private WebElement mensagemErro;
+    @AndroidFindBy(xpath = "//*[@content-desc='input-password']")
+    private WebElement passField;
+    @AndroidFindBy(xpath = "//*[@content-desc='button-LOGIN']//android.view.ViewGroup")
+    private WebElement loginButton;
+    @AndroidFindBy(xpath = "//*[@text='Please enter a valid email address']")
+    private WebElement emailError;
+    @AndroidFindBy(xpath = "//*[@text='Please enter at least 8 characters']" )
+    private WebElement passError;
     public CadastroPage(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
-    public void cadastrar(String name, String email) {
-        nameField.sendKeys(name);
+    public void cadastrar(String pass, String email) {
+        botaoLogin.click();
         emailField.sendKeys(email);
-        registerButton.click();
+        passField.sendKeys(pass);
+        loginButton.click();
     }
     public boolean isCadastroDisplayed() {
-            return cadastroTitle.isDisplayed();
+            return emailError.isDisplayed();
     }
     public String getMensagemErro() {
-            return mensagemErro.getText();
+            return passError.getText();
     }
 }
