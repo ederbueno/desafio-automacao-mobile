@@ -7,11 +7,12 @@ import pages.FormPage;
 
 public class FormTest extends BaseTest {
 
-    @Test(dataProvider = "formData", dataProviderClass = LoginDataProvider .class)
-    public void testPreenchimentoFormulario(String tipo, String indice) throws InterruptedException {
+    @Test(dataProvider = "formData", dataProviderClass = LoginDataProvider.class)
+    public void testPreenchimentoFormulario(String tipo, String texto) {
         FormPage formPage = new FormPage(driver);
-        formPage.clicarNavForms();
-        formPage.preencherFormulario(tipo, Integer.parseInt(indice));
+        formPage.clicarNoBotaoForms();
+        formPage.preencherFormulario(tipo, texto);
+        formPage.activeButton();
         assert formPage.isFormularioEnviado();
     }
 

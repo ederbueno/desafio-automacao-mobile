@@ -11,7 +11,7 @@ public class ErrorMessageTest extends BaseTest {
     @Test
     public void testMensagemErroCamposVazios() {
         FormPage formPage = new FormPage(driver);
-        formPage.preencherFormulario("", 0);
+        formPage.preencherFormulario("", "v");
 
         ErroPage errorPage = new ErroPage(driver);
         String mensagem = errorPage.getMensagemErro();
@@ -22,7 +22,7 @@ public class ErrorMessageTest extends BaseTest {
     @Test
     public void testMensagemErroDadosInvalidos() {
         FormPage formPage = new FormPage(driver);
-        formPage.preencherFormulario("123", 0);
+        formPage.preencherFormulario("123", "x");
 
         ErroPage errorPage = new ErroPage(driver);
         String mensagem = errorPage.getMensagemErro();
